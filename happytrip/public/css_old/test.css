@@ -1,0 +1,57 @@
+.login-dialog {
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    position: absolute;
+    width: 400px;
+}
+.login-box {
+    min-height: 480px;
+    position: relative;
+}
+
+.modal-dialog .modal-content {
+    background: #fff;
+    z-index: 1;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: unset;
+    border-width: 0;
+    max-height: 600px;
+}
+
+.login-box .ls-close-btn {
+    cursor: pointer;
+    z-index: 6;
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#lbt .nav-tabs {
+    border: none;
+}
+
+#lbt .nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: none;
+    text-shadow: none;
+    border-radius: 4px 4px 0 0;
+    color: #203152;
+}
+
+#lbt .nav-tabs > li > a.active {
+    color: #5808d8;
+    cursor: default;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #5808d8;
+}
+
+#txtPax {
+    cursor: pointer;
+}

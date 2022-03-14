@@ -1,0 +1,1 @@
+<a id="btnLogin" href="#" wire:click="loginTab()" data-toggle="modal" data-target="#exampleModal"><span class="selected-item">Login</span></a>

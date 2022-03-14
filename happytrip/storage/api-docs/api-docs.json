@@ -1,0 +1,164 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "HT Api Documentation",
+        "description": "Happy Trip description",
+        "contact": {
+            "email": "it@happytbooking.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://happytrip.yaso.dev/api",
+            "description": "DEV API Server"
+        }
+    ],
+    "paths": {
+        "/flights/locations": {
+            "get": {
+                "tags": [
+                    "Flights"
+                ],
+                "summary": "Get list of locations by name",
+                "description": "Returns list of locations",
+                "operationId": "locations",
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "description": "Location name term",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/flights/check": {
+            "get": {
+                "tags": [
+                    "Flights"
+                ],
+                "summary": "Get flight details by token",
+                "description": "flight details",
+                "operationId": "checkFlights",
+                "parameters": [
+                    {
+                        "name": "booking_token",
+                        "in": "query",
+                        "description": "booking token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bnum",
+                        "in": "query",
+                        "description": "The number of bags for the booking, even if bags_price states that the first (or even second) checked baggage is free, it is necessary to request it",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pnum",
+                        "in": "query",
+                        "description": "Number of passengers. Allowed range is 1-9",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/flights/search": {
+            "get": {
+                "tags": [
+                    "Flights"
+                ],
+                "summary": "Get flights by date and location",
+                "description": "list of flight",
+                "operationId": "flightsSearch",
+                "parameters": [
+                    {
+                        "name": "fly_from",
+                        "in": "query",
+                        "description": "departure location Link to Locations API",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fly_to",
+                        "in": "query",
+                        "description": "It accepts the same values in the same format as the 'fly_from' parameter",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Use parameters date_from and date_to as a date range for the flight departure Example : 01-04-2021",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "search flights upto this date (dd-mm-yyyy) Example : 03-04-2021",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
